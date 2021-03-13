@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.form {
+    display: grid;
+}
+
+.form label {
+    font-weight: bolder;
+}
+
+.form input {
+    margin-bottom: 20px;
+}
