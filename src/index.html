@@ -11,19 +11,27 @@
     <h1 class="title">Forms Exercise</h1>
     <form class="form">
         <label for="email">E-Mail</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
 
         <label for="country">Country</label>
-        <input type="text" name="country" id="country">
+        <select name="country" id="country" required>
+            <option value="" disabled selected>Choose a Country</option>
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="South Korea">South Korea</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+        </select>
 
         <label for="zip-code">Zip Code</label>
-        <input type="text" name="zip-code" id="zip-code">
+        <input type="number" name="zip-code" id="zip-code" required>
 
         <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
 
         <label for="password-confirmation">Password Confirmation</label>
-        <input type="password" name="password-confirmation" id="password-confirmation">
+        <input type="password" name="password-confirmation" id="password-confirmation" required>
 
         <input type="submit" value="Submit">
     </form>
