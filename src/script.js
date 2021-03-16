@@ -24,20 +24,38 @@ function alertMessage(msg){
 }
 
 function checkForm(){
-    if(email.value.toString().length < 5){
+    const alertBorder = 'solid 2px red';
+    if(!email.value.toString().includes('@') || !email.value.toString().includes('.com')){
         alertMessage('Invalid Email');
+        email.style.border = alertBorder;
         return false;
-    } 
-    if(country.toString().length === 0){
-        alertMessage('Please Select a Country');
-        return false;
+    } else {
+        email.style.border = ''
     }
+
+    if(country.value.toString().length === 0){
+        alertMessage('Please Select a Country');
+        country.style.border = alertBorder;
+        return false;
+    } else {
+        country.style.border = '';
+    }
+
     if(zipCode.value.toString().length < 5){
         alertMessage('Please enter valid zip code.');
+        zipCode.style.border =alertBorder;
         return false;
+    } else {
+        zipCode.style.border = '';
     }
+
     if(!passwordsMatch()){
+        password.style.border = alertBorder;
+        passwordConfirmation.style.border = alertBorder;
         return false;
+    } else {
+        password.style.border = '';
+        passwordConfirmation.style.border = '';
     }
     return true;
 }
@@ -47,7 +65,6 @@ function checkForm(){
 function passwordsMatch(){
 
     if(password.value.toString().length === 0){
-        console.log('No password entered');
         alertMessage('No Password Entered');
         return false;
     } else if (password.value.toString().length < 8){
@@ -57,7 +74,6 @@ function passwordsMatch(){
 
     const match = (password.value === passwordConfirmation.value);
     if(match){
-        console.log('Passwords match');
         return true;
     } else {
         alertMessage('Password must match!');
@@ -72,11 +88,12 @@ function submissionSuccess(){
         successDiv.style.display = 'none';
         form.style.opacity = '1';
     }, 1000);
-
 }
 
 function submitForm(e){
+
     e.preventDefault();
+
     if(checkForm()){
         submissionSuccess();
         email.value = '';
