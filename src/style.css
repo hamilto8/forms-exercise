@@ -71,3 +71,7 @@ html, body {
     transform: translate(-50%, -50%);
     opacity: 1;
 }
+
+label {
+    text-decoration: underline;
+}

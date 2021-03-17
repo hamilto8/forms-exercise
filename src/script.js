@@ -41,9 +41,9 @@ function checkForm(){
         country.style.border = '';
     }
 
-    if(zipCode.value.toString().length < 5){
+    if(zipCode.value.toString().length !== 5){
         alertMessage('Please enter valid zip code.');
-        zipCode.style.border =alertBorder;
+        zipCode.style.border = alertBorder;
         return false;
     } else {
         zipCode.style.border = '';
